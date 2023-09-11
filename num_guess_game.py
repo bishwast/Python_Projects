@@ -23,6 +23,13 @@ Logic
 5. The player will have 4 goes to guess the number correctly; if they don’t guess
    the number within this number of attempts, then they will be informed that they
    have lost the game and will be told what the actual number was.
+
+
+look for exception handling
+functions
+make code reusable
+change the code format to make functions reusable.
+
 """
 import random
 
@@ -37,12 +44,22 @@ while play_again.lower() == 'y':
 
     # Check if the counter is no more than 4 attempts.
     while guess_counter <= 4:
-        user_guess = int(input("Please guess a number between 1 and 10: "))
+        # user_guess = int(input("Please guess a number between 1 and 10: "))
+
+        try:
+            user_guess = int(input("Please guess a number between 1 and 10: "))
+
+        except ValueError as e:
+            print("Invalid Input! Please enter only numbers!")
+            user_guess = int(input("Please guess a number between 1 and 10: "))
+
+        # if user further gives invalid input
 
         if user_guess < 1 or user_guess > 10:
             print("Please guess a number between 1 and 10")
             # if the condition is correct, continue, else repeat the same message.
             continue
+
         # Check if user guessed the right number
         if number_to_guess == user_guess:
             print("Great, your guess is correct!")
@@ -62,6 +79,6 @@ while play_again.lower() == 'y':
     play_again = input("Would you like to guess the number again? (y/n): ")
 # Once the game is over, print the msg
 print("Game Over!")
-
+# user input
 
 
