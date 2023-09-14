@@ -1,4 +1,5 @@
-# num_guessing_game
-Number guessing game. 
+Projects in this repo are python OOP focused for my personal knowledge and skills development in programming. This repo contains following projects. 
 
-While Loop and If-Else statement implementation
+1. number guessing game without functions.
+2. number guessing game with functions implementation.
+3. calculator application with functions.
