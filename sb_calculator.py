@@ -39,3 +39,43 @@ def division(x,y):
     :return: quotient
     """
     return x/y
+
+# Verification - Reject any input until user input is either y or n.
+def check_if_the_user_has_finished():
+    """
+    Checks if the user wants to finish the operation or not.
+    Performs verification on the users input.
+    """
+    # Fail closed approach - Always fail by closing down an application or the connection.
+    ok_to_finish = True
+    # Verify if the user has provided an acceptable input or not (y/n).
+    user_input_accepted = False
+
+    while not user_input_accepted:
+        user_input = input("Do you want to continue? (y/n): ")
+        if user_input == 'y':
+            user_input_accepted = True
+        elif user_input == 'n':
+            user_input_accepted = False
+        else:
+            print("Invalid Entry! Please enter 'y' or 'n'.")
+    # User is ok to finish / True if input is 'y' by default. If enters y python understands the boolean logic is False.
+    return ok_to_finish
+
+
+
+# Skeleton of the logic for calculator processing cycle.
+# Boolean flag, to determine weather to terminate the main processing loop/not.
+finished = False
+# Main processing loop of the calculator.
+while not finished:
+    result = 0
+    # Get the operation from the user.
+    # Get the numbers from the user.
+    # Select the operation.
+    print(f"Result: {result}")
+    # Determine if the user wants to continue/finished
+    user_input = input("Do you want to continue? (y/n): ")
+    # Verification - Reject any input until user input is either y or n.
+
+print("Thank you for using the Calculator App!")
