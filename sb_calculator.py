@@ -62,7 +62,27 @@ def check_if_the_user_has_finished():
     # User is ok to finish / True if input is 'y' by default. If enters y python understands the boolean logic is False.
     return ok_to_finish
 
-
+def get_operation_choice():
+    """
+    Get a valid input from the user for operations to process.
+    Operations are assigned numbers from 1-4 as we have 4 operations.
+    :return: A string representing the user's choice.
+    """
+    # By default, the program does not have any inputs from the user.
+    input_ok = False
+    while not input_ok:
+        print("Following are the operator to choose from:")
+        print("\t1. Add")
+        print("\t2. Subtract")
+        print("\t3.Multiply")
+        print("\t4.Divide")
+        print("--"*50)
+        user_selection = input("Please make a selection from 1 to 4: ")
+        if user_selection in ('1', '2','3','4'):
+            input_ok = True
+        else:
+            print("Invalid Selection! Please select from 1 to 4 only.")
+    return user_selection
 
 # Skeleton of the logic for calculator processing cycle.
 # Boolean flag, to determine weather to terminate the main processing loop/not.
@@ -71,6 +91,8 @@ finished = False
 while not finished:
     result = 0
     # Get the operation from the user.
+    operator_choice = get_operation_choice()
+
     # Get the numbers from the user.
     # Select the operation.
     print(f"Result: {result}")
