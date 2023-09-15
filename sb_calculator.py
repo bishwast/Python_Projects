@@ -75,7 +75,29 @@ while not finished:
     # Select the operation.
     print(f"Result: {result}")
     # Determine if the user wants to continue/finished
-    user_input = input("Do you want to continue? (y/n): ")
-    # Verification - Reject any input until user input is either y or n.
-
+    finished = check_if_the_user_has_finished()
 print("Thank you for using the Calculator App!")
+
+## Selecting the Operation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
