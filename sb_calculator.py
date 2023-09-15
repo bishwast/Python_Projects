@@ -6,6 +6,8 @@ Defining set of functions that will implement the calculator operations below:
 2. Subtraction
 3. Multiplication
 4. Division
+5. Modulus
+6. Power Of
 
 - Functions will take 2 parameters and return another number. 
 """
@@ -82,7 +84,7 @@ def check_if_the_user_has_finished():
 def get_operation_choice():
     """
     Get a valid input from the user for operations to process.
-    Operations are assigned numbers from 1-4 as we have 4 operations.
+    Operations are assigned numbers from 1-6 as we have 6 operations to choose from.
     :return: A string representing the user's choice.
     """
     # By default, the program does not have any inputs from the user.
