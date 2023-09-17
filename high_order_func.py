@@ -78,51 +78,44 @@ def check_user_input(user_input):
     else:
         return False, f"Invalid Input! Your input was: {user_input}, and it is not a letter, number or a digit."
 
+def check_if_the_user_has_finished():
+    """
+    Checks if the user wants to finish the operation or not.
+    Performs verification on the users input.
+    """
+    while True:
+        user_input = input("Do you want to finish? (y/n): ")
+        if user_input == 'y':
+            return True
+        elif user_input == 'n':
+            return False
+        else:
+            print("Invalid Entry! Please enter 'y' or 'n'.")
+
 def my_high_order_function(n, func):
     return func(n)
 
 # Assigning the function with a user input to a variable.
 # this way the user will have to enter only one output for several function call operations.
-user_input = get_input()
-
-if user_input.isdigit():
-    # If user input is a digit, then prompt for a number and perform operations.
-    user_input = int(user_input)
-    print(f"You entered {user_input} and it is a number.")
-    r1 = my_high_order_function(user_input, double)
-    print(f"Double of {user_input} is {r1}")
-    r2 = my_high_order_function(user_input, triple)
-    print(f"Triple of {user_input} is {r2}")
-    r3 = my_high_order_function(user_input, square_root)
-    print(f"Square root of {user_input} is {r3}")
-    r4 = my_high_order_function(user_input,is_prime_n)
-    print(f"Is {user_input} a Prime Number? (True/False): {r4}")
-    r5 = my_high_order_function(user_input, is_integer)
-    print(f"Is {user_input} an Integer? (True/False): {r5}")
-
-else:
-    # If user_input is not a digit, call check_user_input function and perform.
-    valid, message = check_user_input(user_input)
-    if valid:
-        print(message)
+finished = False
+while not finished:
+    user_input = get_input()
+    if user_input.isdigit():
+        # If user input is a digit, then prompt for a number and perform operations.
+        user_input = int(user_input)
+        print(f"You entered {user_input} and it is a number.")
+        r1 = my_high_order_function(user_input, double)
+        print(f"Double of {user_input} is {r1}")
+        r2 = my_high_order_function(user_input, triple)
+        print(f"Triple of {user_input} is {r2}")
+        r3 = my_high_order_function(user_input, square_root)
+        print(f"Square root of {user_input} is {r3}")
+        r4 = my_high_order_function(user_input,is_prime_n)
+        print(f"Is {user_input} a Prime Number? (True/False): {r4}")
+        r5 = my_high_order_function(user_input, is_integer)
+        print(f"Is {user_input} an Integer? (True/False): {r5}")
     else:
-        print(message)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        # If user_input is not a digit, call check_user_input function and perform.
+        valid = check_user_input(user_input)
+    finished = check_if_the_user_has_finished()
+print("Thank you for using this module!")
