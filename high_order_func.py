@@ -63,20 +63,20 @@ def is_integer(n):
     """Checks for integer value and returns T/F"""
     return isinstance(n, int)
 
-
-
 def check_user_input(user_input):
-    if user_input.isdigit():
-         print(f"You entered: {user_input}, and it is a number")
-         return True
-    elif user_input.isnumeric():
-        print(f"You entered: {user_input}, and it is a number")
-        return True
-    elif user_input.isalpha():
-        print(f"You entered: {user_input}, it is a letter")
-        return True
+    """
+    Applies all(char.isalnum()) built-in function to check if user enters anything else than a number or letter.
+    :param user_input: Applies user input.
+    :return: Prompts messages.
+    """
+    if all(char.isalnum() for char in user_input):
+       if user_input.isdigit():
+             print(f"You entered: {user_input}, and it is a number")
+       elif user_input.isalpha():
+            print(f"You entered: {user_input}, it is a letter")
     else:
-        return False, f"Invalid Input! Your input was: {user_input}, and it is not a letter, number or a digit."
+        print(f"Invalid Input! Your input was: {user_input}, and it is not a letter, number or a digit.")
+        return False
 
 def check_if_the_user_has_finished():
     """
@@ -93,6 +93,12 @@ def check_if_the_user_has_finished():
             print("Invalid Entry! Please enter 'y' or 'n'.")
 
 def my_high_order_function(n, func):
+    """
+    High order function that takes two parameter which returns a functions once called.
+    :param n: parameter to apply in another parameter.
+    :param func: function as a parameter that takes in an argument
+    :return: returns a function
+    """
     return func(n)
 
 # Assigning the function with a user input to a variable.
