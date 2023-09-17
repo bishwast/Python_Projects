@@ -60,7 +60,13 @@ def get_integer_n(msg):
     return int(value_as_string)
 
 def is_integer(n):
-    """Checks for integer value and returns T/F"""
+    """
+    Checks for integer value and returns T/F
+    isinstance() function, which takes 2 arguments.
+    n = object to check
+    int = classinfo to check against
+    :returns - T/F if the object n is or not of a class type int.
+    """
     return isinstance(n, int)
 
 def check_user_input(user_input):
