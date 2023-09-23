@@ -3,7 +3,7 @@ class Account:
         self.account_num = account_num
         self.account_holder_name = account_holder_name
         self.current_balance = current_balance
-        self.account_type = account_type
+        self.account_type = account_type.split(', ')
 
     def deposit(self, amount):
         print(f"Account Number: {self.account_num} \n"
@@ -13,6 +13,11 @@ class Account:
                f"Account Holder: {self.account_holder_name} \n" \
                f"Current balance: {self.current_balance}\n" \
                f"Account Type: {self.account_type}"
+
+    def __str__(self):
+        # calling .join() method on a string ', ' so that strings can be concatenated  when a list of strings is passed
+        # so can be displayed into a single string with comma separated values.
+        account_types = ', '.join(self.account_type)
 
     def withdraw(self, amount):
         # existing balance
@@ -31,7 +36,7 @@ class Account:
     def get_balance(self):
         return self.current_balance
 
-acc1 = Account("123", "Hann", 1000, ["Current"])
+acc1 = Account("123", "Hann", 1000, "Current")
 print(acc1.deposit(200))
 print(acc1.withdraw(120))
 print("Current Balance: ", acc1.get_balance())
