@@ -6,20 +6,33 @@ class Account:
         self.account_type = account_type
 
     def deposit(self, amount):
-        print(f"Your existing balance is {self.current_balance}")
+        print(f"Account Number: {self.account_num} \n"
+              f"Existing balance: {self.current_balance}")
         self.current_balance += amount
-        return self.account_holder_name + f" for account number {self.account_num} has a current balance of {self.current_balance}"
+        return f"Account Number: {self.account_num} \n" \
+               f"Account Holder: {self.account_holder_name} \n" \
+               f"Current balance: {self.current_balance}\n" \
+               f"Account Type: {self.account_type}"
 
     def withdraw(self, amount):
-        print(f"Your existing balance is {self.current_balance}")
         # existing balance
-        # check if the withdraw amount is greater than the current balance,
-        # if amount less than current balance then withdraw, so current balance = current balance - amount
+        print(f"Account Number: {self.account_num} has existing balance of {self.current_balance}")
 
-        return self.account_holder_name + f" for account number {self.account_num} has a balance of " + str(self.current_balance - self.withdraw())
+        # check if the withdrawn amount is greater than the current balance,
+        if self.current_balance < amount:
+            print("Insufficient funds")
+        else:
+            self.current_balance -= amount
+        # if amount less than current balance then withdraw, so current balance = current balance - amount
+        return f"Account Number: {self.account_num} \n" \
+               f"Withdraw amount: {amount}\n" \
+               f"Current balance: {self.current_balance}"
 
     def get_balance(self):
         return self.current_balance
 
-acc1 = Account("123", "Hann", 10.5, "Current")
+acc1 = Account("123", "Hann", 1000, ["Current"])
+print(acc1.deposit(200))
+print(acc1.withdraw(120))
+print("Current Balance: ", acc1.get_balance())
 
