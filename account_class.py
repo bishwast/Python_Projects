@@ -8,6 +8,17 @@ class Account:
 
 
     """
+
+    # Keep track of number of instances of the class that have been created.
+    instance_count = 0
+    @classmethod
+    def increment_instance_count(cls):
+        """
+        Class Method that takes a representation of the class itself as a first parameter
+        Returns: Stored count of total instances of the class Account
+        """
+        cls.instance_count +=1
+
     def __init__(self, account_num, account_holder_name, current_balance, account_type = "Current, Savings, Investment"):
         """
         Instantiating the class Account.
@@ -16,11 +27,14 @@ class Account:
         :param current_balance: number
         :param account_type: 3 types, comma separated for each element
         """
+        # Calling classmethod to access the content within.
+        Account.increment_instance_count()
         self.account_num = account_num
         self.account_holder_name = account_holder_name
         self.current_balance = current_balance
         self.account_type = account_type.split(', ')
-
+        # Print out a message each time a new instance of the Account class is created.
+        print(f"New instance of the class Account is for {self.account_holder_name} and Total instances: {Account.instance_count}")
     def __str__(self):
         """
         String representation of the Object of a class Account using __str__ method
@@ -80,3 +94,6 @@ print("--"*50)
 print(acc2.withdraw(2000))
 print("--"*50)
 print("Outstanding Balance: ", acc2.get_balance())
+
+# Print out number of accounts created at the end of the previous test program.
+print(f"Number of Accounts created: {Account.instance_count}")
