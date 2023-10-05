@@ -9,4 +9,4 @@ Projects in this repo are python OOP focused for my personal knowledge and skill
     - Class: A class is a fundamental concept that serves as a blueprint for creating instances or objects. A Class encapsulates data/attributes and methods/procedures/functions, that operates on the data. 
     - Subclass: A Subclass is a Class that inherits from another class. 
     - Superclass: A Superclass is a Parent class from which other class inherits from.
-    - Python is a Multiple Inheritance system other than Java as Python allows class to inherit from one or more classes. 
+    - Python is a Multiple Inheritance system other than Java (Single Inheritance) as Python allows class to inherit from one or more classes. 
