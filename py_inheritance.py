@@ -6,7 +6,15 @@ class Person:
     def birthday(self):
         print(f"Happy birthday {self.name}, your current age is {self.age}.")
         self.age +=1
-        print(f"{self.name} you are {self.age} years old.")
+        print(f"{self.name} you are now {self.age} years old.")
+
+"""
+# Following code can be used if we want to print an instance of
+Person class without calling the birthday() method.  
+    def __str__(self):
+        return f"{self.name} is {self.age} years old."
+"""
+
 
 # Inheriting the Person class
 class Employee(Person):
@@ -35,4 +43,28 @@ class SalesPerson(Employee):
     def bonus(self):
         return f"Your bonus is {self.sales * 0.50}"
 
+"""
+Notes: 
+Now class SalesPerson has attributes name, age, id, in addition to 
+region and sales. It also inherits birthday() and calculate_pay() 
+behaviors and has its own bonus() behavior. 
+The logic behind subclass is 
+SalesPerson.__init__() method calls Employee.__init__() method.
+"""
 
+print("From Class Person")
+p = Person("Henry", 35)
+p.birthday()
+print("**" * 25)
+
+print("From Class Employee")
+e = Employee("John", 32, 1221)
+e.birthday()
+print(f"Pay (e.Calculate_pay(40)): {e.calculate_pay(40)}")
+print("**"*25)
+
+print("From SubClass SalesPerson")
+sp = SalesPerson("Peter", 25, 2332, "North America", 500)
+sp.birthday()
+print(f"Pay: {sp.calculate_pay(40)}")
+print(f"Bonus: {sp.bonus()}")
