@@ -4,7 +4,7 @@ class Person:
         self.age = age
 
     def birthday(self):
-        print(f"Happy birthday {self.name}, your current age is {self.age}.")
+        print(f"Happy birthday {self.name}, your were {self.age} years old.")
         self.age +=1
         print(f"{self.name} you are now {self.age} years old.")
 
