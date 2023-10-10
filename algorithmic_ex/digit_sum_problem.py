@@ -16,7 +16,8 @@ Iterate N times: Generate N-Digit numbers one digit at a time.
 Repeat for N-digit numbers: Iterate N times again for the desired number of N-Digit numbers needs to be summed.
 
 Placing a digit in the appropriate place = 10^(N-1)
-    Where, N Represents a number in a number of digit.
+    Where, 10 is the base.
+           N Represents a number in a number of digit.
            (N-1) Represents the position of the digit within a number.
     Example, If N=2, means I am constructing a 2-digit number,
              (2-1 = 1) Indicating the rightmost position in a 2-digit number
@@ -40,4 +41,10 @@ def sum_of_num_in_digit(digit_set, N, count):
         total_sum += current_number
     return total_sum
 
+## testing
+digit_set = [1,2,3,4]
+N = 3
+count = 10
+sum = sum_of_num_in_digit(digit_set, N, count)
+print(sum)
 
